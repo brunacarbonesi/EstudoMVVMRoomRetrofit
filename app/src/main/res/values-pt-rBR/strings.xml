@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EstudoMVVMRoomRetrofit</string>
+    <string name="title">Contacts</string>
+    <string name="success">Success!</string>
+    <string name="text_version_app">versio: %1$s</string>
+    <string name="text_about_app">Sobre o app</string>
+    <string name="lista_vazia">Lista vazia!</string>
+    <string name="remote">Os dados estão vindo da api.</string>
+    <string name="cache">Os dados estão vindo do cache.</string>
+    <string name="error_cache">Ocorreu um erro. Os dados estão vindo do cache.</string>
+    <string name="error_inesperado">Ocorreu um erro inesperado!</string>
+    <string name="error">Ocorreu um erro. Tente novamente.</string>
+</resources>

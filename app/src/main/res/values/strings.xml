@@ -1,14 +1,15 @@
 <resources>
     <string name="app_name">EstudoMVVMRoomRetrofit</string>
+
     <string name="title">Contatos</string>
-    <string name="error">Ocorreu um erro. Tente novamente.</string>
-    <string name="error_inesperado">Ocorreu um erro inesperado!</string>
     <string name="success">Sucesso!</string>
-    <string name="error_cache">Ocorreu um erro. Os dados estão vindo do cache.</string>
-    <string name="cache">Os dados estão vindo do cache.</string>
-    <string name="remote">Os dados estão vindo da api.</string>
-    <string name="lista_vazia">Lista vazia!</string>
+    <string name="remote">Data coming from api</string>
     <string name="text_about_app">About app</string>
-    <string name="text_bruna_phone">+55 21 99740.5040</string>
-    <string name="text_version_app">versão do app:</string>
+    <string name="text_bruna_phone" translatable="false">+55 21 99740.5040</string>
+    <string name="text_version_app">versão: %1$s</string>
+    <string name="lista_vazia">Empty list!</string>
+    <string name="cache">Data coming from cache</string>
+    <string name="error">An error has occurred. Try again.</string>
+    <string name="error_inesperado">An unexpected error has occurred!</string>
+    <string name="error_cache">An error has occurred. Data is coming from the cache.</string>
 </resources>
