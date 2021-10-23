@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="input_stroke_width" type="dimen">3dp</item>
+    <item name="corner_radius" type="dimen">5dp</item>
+
+
+    <!-- Text Sizes -->
+    <item name="input_text" type="dimen">18sp</item>
+    <item name="button_text" type="dimen">18sp</item>
+    <item name="fragment_titles" type="dimen">32sp</item>
+    <dimen name="activity_about_app_texts_infos">14sp</dimen>
+
+    <!-- Margins -->
+    <item name="margin_between_login_components" type="dimen">16dp</item>
+    <item name="margin_button" type="dimen">32dp</item>
+
+
+
+</resources>
