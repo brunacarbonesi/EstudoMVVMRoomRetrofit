@@ -14,9 +14,4 @@ interface MovieService {
         @Query("page") page: Int
     ): Single<MoviesResponse>
 
-    @GET("movie/top_rated")
-    fun getTopRatedMovies(
-        @Query("api_key") apiKey: String = "28462c086aa50bfdb7f5d824170f5df7",
-        @Query("page") page: Int
-    ): Call<MoviesResponse>
 }
