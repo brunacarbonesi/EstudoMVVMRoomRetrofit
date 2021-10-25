@@ -6,10 +6,18 @@
     <string name="text_version_app">versão: %1$s</string>
     <string name="text_about_app">Sobre o app</string>
     <string name="lista_vazia">Lista vazia!</string>
+    <string name="check_network_connection">Verifique sua conexão para obter a lista de filmes.</string>
     <string name="remote">Os dados estão vindo da api.</string>
     <string name="cache">Os dados estão vindo do cache.</string>
     <string name="error_cache">Ocorreu um erro. Os dados estão vindo do cache.</string>
     <string name="error_inesperado">Ocorreu um erro inesperado!</string>
     <string name="error">Ocorreu um erro. Tente novamente.</string>
     <string name="release_date">Data de lançamento: %1$s</string>
+
+    <!--    Navigation-->
+    <string name="title_movies_list">Lista de filmes</string>
+    <string name="title_about_app">Sobre o app</string>
+    <string name="title_movie_detail">Detalhe do filme</string>
+    <string name="occupation">desenvolvedora android</string>
+    <string name="rating">Nota</string>
 </resources>
