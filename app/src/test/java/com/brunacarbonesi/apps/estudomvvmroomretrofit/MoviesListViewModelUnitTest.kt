@@ -37,7 +37,7 @@ class MoviesListViewModelUnitTest {
 
 
     @Test
-    fun `when view model preencheListaUsuarios then sets liveDataUser`() {
+    fun `when view model preencheListaFilmes then sets liveDataUser`() {
         //Arrange
         val users = listOf(
             MovieVO(1000, "Filme 1", "Overview do filme 1", "urlPoster 1","urlBackdrop 1", 9.6f, "2022-01-01"),
