@@ -14,33 +14,16 @@ class AboutAppActivity : AppCompatActivity() {
     private var _binding: ActivityAboutAppBinding? = null
     private val binding get() = _binding!!
 
-    private var aboutAppViewModel: AboutAppViewModel? = null
-
-    private val factory = AboutAppViewModel.Factory()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         _binding = ActivityAboutAppBinding.inflate(layoutInflater)
 
-        aboutAppViewModel = ViewModelProvider(this, factory).get(AboutAppViewModel::class.java)
-
         getVersionApp()
         setupActionBar()
-        applyObserver()
 
         setContentView(binding.root)
     }
-
-    private fun applyObserver() {
-        aboutAppViewModel?.liveDataAboutApp?.observe(this, Observer { updateViews() })
-    }
-
-    private fun updateViews() {
-        setupActionBar()
-        getVersionApp()
-    }
-
 
     private fun setupActionBar() {
         setSupportActionBar(binding.activityAboutAppToolbar)

@@ -20,9 +20,11 @@ import com.brunacarbonesi.apps.estudomvvmroomretrofit.adapter.MovieListAdapter
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.adapter.OnClickListener
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.databinding.FragmentMoviesListBinding
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.service.model.MovieVO
+import com.brunacarbonesi.apps.estudomvvmroomretrofit.utils.Definitions
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.utils.NetworkHelper
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.utils.ViewStatus
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialElevationScale
 
 class MoviesListFragment : Fragment() {
@@ -41,12 +43,7 @@ class MoviesListFragment : Fragment() {
 
     private lateinit var moviesList: List<MovieVO>
 
-    private var savedRecyclerLayoutState: Parcelable? = null
-
-
     companion object {
-        const val SAVE_STATE = "save state"
-
         @JvmStatic
         fun newInstance() =
             MoviesListFragment().apply {
@@ -59,53 +56,47 @@ class MoviesListFragment : Fragment() {
         exitTransition = MaterialElevationScale(false)
         reenterTransition = MaterialElevationScale(true)
 
-        Log.d("OnCreate", "ok")
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        Log.d("OnCreateView", "ok")
+        _binding = FragmentMoviesListBinding.inflate(inflater, container, false)
+
         moviesListViewModel =
             ViewModelProvider(this, factory).get(MoviesListViewModel::class.java)
 
-        _binding = FragmentMoviesListBinding.inflate(inflater, container, false)
-
         setupView()
         applyObserver()
-
-        if (savedInstanceState != null) {
-            val savedRecyclerLayoutState: Parcelable? = savedInstanceState.getParcelable(SAVE_STATE)
-            recyclerView.layoutManager?.onRestoreInstanceState(savedRecyclerLayoutState)
-        } else {
-            isNetworkAvailable = NetworkHelper.isNetworkConnected(requireContext())
-            moviesListViewModel?.fillMoviesList(isNetworkAvailable)
-        }
+        startMethodToObserve()
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView = binding.recyclerView
+        numberOfColumns = Definitions.numberOfColumnsDefinition(resources)
+
+        recyclerView.apply {
+            layoutManager = GridLayoutManager(context, numberOfColumns)
+            adapter = moviesListAdapter
+        }
     }
 
-//    override fun onSaveInstanceState(outState: Bundle) {
-//        super.onSaveInstanceState(outState)
-//        Log.d("OnSaveInstanceState", "ok")
-//        outState.putParcelable(SAVE_STATE, recyclerView.layoutManager?.onSaveInstanceState())
-//    }
+    private fun setupView() {
+        progressBar = binding.movieListProgressBar
+        recyclerView = binding.recyclerView
+
+        moviesListAdapter = MovieListAdapter()
+    }
 
     private fun applyObserver() {
-        Log.d("Apply observer", "ok")
         moviesListViewModel?.liveDataMovie?.observe(viewLifecycleOwner, { viewData ->
             when (viewData.viewStatus) {
                 ViewStatus.SUCCESS -> {
                     if (viewData.data != null) {
                         moviesList = viewData.data
-                        numberOfColumns = numberOfColumnsDefinition()
                         setRecyclerView(moviesList)
                         progressBar.visibility = View.GONE
                     }
@@ -130,17 +121,12 @@ class MoviesListFragment : Fragment() {
         })
     }
 
-    private fun setupView() {
-        Log.d("SetupView", "ok")
-        progressBar = binding.movieListProgressBar
-        recyclerView = binding.recyclerView
-
-        moviesListAdapter = MovieListAdapter()
-
+    private fun startMethodToObserve() {
+        isNetworkAvailable = NetworkHelper.isNetworkConnected(requireContext())
+        moviesListViewModel?.fillMoviesList(isNetworkAvailable)
     }
 
     private fun setRecyclerView(moviesList: List<MovieVO>) {
-        Log.d("SetRecyclerView", "ok")
         moviesListAdapter.movies = moviesList
 
         moviesListAdapter.listener = object : OnClickListener {
@@ -153,31 +139,5 @@ class MoviesListFragment : Fragment() {
                 findNavController().navigate(action, extras)
             }
         }
-
-        recyclerView.apply {
-            layoutManager = GridLayoutManager(context, numberOfColumns)
-            adapter = moviesListAdapter
-        }
-
-        recyclerViewLayoutState(recyclerView)
     }
-
-    private fun recyclerViewLayoutState(recyclerView: RecyclerView) {
-        Log.d("RecyclerViewLayoutState", "ok")
-        if (savedRecyclerLayoutState != null) {
-            recyclerView.layoutManager?.onRestoreInstanceState(savedRecyclerLayoutState)
-        }
-    }
-
-    fun numberOfColumnsDefinition(): Int {
-        Log.d("NumberOfColumns", "ok")
-        val variableNumberOfColumns: Int =
-            if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                6
-            } else {
-                3
-            }
-        return variableNumberOfColumns
-    }
-
 }
