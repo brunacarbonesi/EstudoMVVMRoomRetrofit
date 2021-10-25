@@ -35,7 +35,7 @@ api será consumida.
 Se não, os dados armazenados em cache serão disponibilizados. 
 
 Para o consumo da Api, foi utilizada a biblioteca **Retrofit**. É uma biblioteca Rest que simplifica a comunicação com um webservice RESTful.
-Para o armazenamento e consumo dos dados em base local (persistência dos dados), a biblioteca **Room**foi implementada. Com ela, há uma simplificação na aplicação do SQLite.
+Para o armazenamento e consumo dos dados em base local (persistência dos dados), a biblioteca **Room** foi implementada. Com ela, há uma simplificação na aplicação do SQLite.
 
 Sobre os dados, utilizei o **Single** para observar o dado ou o erro do resultado obtido através do repositório.
 O Single faz parte do RXJava e com isso pude aplicar o map para transformação dos dados obtidos no banco de dados e na Api.
@@ -56,6 +56,7 @@ O **Data Binding** colabora com a diminuição de linhas de código e também no
 
 ## A fazer
 - Salvar o estado da tela do recyclerView (SaveState)
+- Construir os layouts através do Composable do Jetpack.
 - Uso da biblioteca Pagination3 do JetPack para consumir a Api como uma lista "infinita".
 - Implementação de biblioteca para injeção de dependência (provavelmente Hilt ou Koin)
 - Aplicar testes instrumentados
