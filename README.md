@@ -12,7 +12,7 @@ São três telas:
 
 ## O projeto
 
-Na lista de filmes, há o tratamento para três status da lista.
+Na lista de filmes, há o tratamento para quatro status da lista.
 1. **Success:** lista preenchida com os filmes obtidos da api ou do cache (caso o device esteja sem 
    conexão à internet)
 2. **Error:** se houver algum erro com a obtenção desses filmes
@@ -23,7 +23,7 @@ com rede de internet e se a lista não tiver sido preenchida previamente (quando
    
 
 Neste projeto, utilizei a arquitetura MVVM para separar as camadas de dados, de apresentação e 
-de lógica de negócio. 
+de regras de negócio. 
 
 Nas **Views**, recebi os valores através do LiveData e gerenciei a exibição dos elementos da tela de 
 acordo com o status enviado pelo ViewModel. 
