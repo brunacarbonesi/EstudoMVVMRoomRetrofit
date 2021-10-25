@@ -9,7 +9,7 @@ import android.os.Build
 object NetworkHelper {
     fun isNetworkConnected(context: Context): Boolean {
 
-        var result = false
+        var result: Boolean
         (context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).apply {
             result = checkNetworkConnection(this, this.activeNetwork)
         }
