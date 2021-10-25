@@ -13,10 +13,10 @@ São três telas:
 ## O projeto
 
 Na lista de filmes, há o tratamento para três status da lista.
-1. Success: lista preenchida com os filmes obtidos da api ou do cache (caso o device esteja sem 
+1. **Success:** lista preenchida com os filmes obtidos da api ou do cache (caso o device esteja sem 
    conexão à internet)
-2. Error: se houver algum erro com a obtenção desses filmes
-3. No value: se a lista de filmes estiver vazia. Este caso ocorrerá com a falta de conexão 
+2. **Error:** se houver algum erro com a obtenção desses filmes
+3. **No value:** se a lista de filmes estiver vazia. Este caso ocorrerá com a falta de conexão 
 com rede de internet e se a lista não tiver sido preenchida previamente (quando o device estava 
    conectado à internet).
    
@@ -46,9 +46,9 @@ Para referenciar os elementos das Views, utilizei o view binding e para preenche
 O **Data Binding** colabora com a diminuição de linhas de código e também no tratamento de "nulidade". Ele o faz automaticamente.
 
 ### Resumo do design pattern:
-- Model e Repositório: lógica de negócio e regras de como os dados podem ser manipulados
-- ViewModel: expõe os dados necessários para a View
-- View: somente observa as mudanças sinalizadas pelo ViewModel e reage
+- **Model e Repositório:** lógica de negócio e regras de como os dados podem ser manipulados
+- **ViewModel:** expõe os dados necessários para a View
+- **View:** somente observa as mudanças sinalizadas pelo ViewModel e reage
 
 ## Melhorias a serem feitas:
 - Teste unitário: foi escrito um teste unitário simples. Pretendo elaborar testes para maior cobertura do código.
