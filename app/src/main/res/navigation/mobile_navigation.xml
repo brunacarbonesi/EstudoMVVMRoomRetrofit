@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_movies_list">
+
+    <fragment
+        android:id="@+id/navigation_movies_list"
+        android:name="com.brunacarbonesi.apps.estudomvvmroomretrofit.movieslistActivity.MoviesListFragment"
+        android:label="@string/title_movies_list"
+        tools:layout="@layout/fragment_movies_list">
+        <action
+            android:id="@+id/action_navigation_movies_list_to_about_app"
+            app:destination="@id/navigation_about_app"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+
+        <action
+            android:id="@+id/action_navigation_movies_list_to_movie_detail"
+            app:destination="@id/navigation_movie_detail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/nav_default_exit_anim"/>
+
+    </fragment>
+
+    <activity
+        android:id="@+id/navigation_about_app"
+        android:name="com.brunacarbonesi.apps.estudomvvmroomretrofit.aboutAppActivity.AboutAppActivity"
+        android:label="@string/title_about_app"
+        tools:layout="@layout/activity_about_app"/>
+
+    <fragment
+        android:id="@+id/navigation_movie_detail"
+        android:name="com.brunacarbonesi.apps.estudomvvmroomretrofit.movieDetailActivity.MovieDetailFragment"
+        android:label="@string/title_movie_detail"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movieVO"
+            app:argType="com.brunacarbonesi.apps.estudomvvmroomretrofit.service.model.MovieVO" />
+        <action
+            android:id="@+id/action_navigation_movie_detail_to_movies_list"
+            app:destination="@id/navigation_movies_list"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+
+</navigation>
