@@ -12,6 +12,6 @@
       android:top="75dp"
       android:start="40dp"
       android:end="40dp"
-      android:drawable="@drawable/ic_movie_list_item" />
+      android:drawable="@drawable/ic_movie_list_item"/>
 
 </layer-list>
