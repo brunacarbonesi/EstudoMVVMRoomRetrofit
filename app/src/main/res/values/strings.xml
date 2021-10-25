@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EstudoMVVMRoomRetrofit</string>
+    <string name="app_name" translatable="false">CineApp</string>
 
     <string name="title">Contacts</string>
     <string name="success">Success!</string>

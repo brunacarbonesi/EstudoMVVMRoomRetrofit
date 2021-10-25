@@ -21,4 +21,9 @@
         <item name="android:statusBarColor" tools:targetApi="lollipop">@color/black</item>
     </style>
 
+    <style name="Theme.EstudoMVVMRoomRetrofit.ProgressBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="color">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
 </resources>
