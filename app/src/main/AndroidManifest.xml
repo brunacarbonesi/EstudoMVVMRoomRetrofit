@@ -5,15 +5,14 @@
     <application
         android:name=".MovieApplication"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_cine_app_vertical_cinza"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_cine_app_vertical_cinza_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EstudoMVVMRoomRetrofit">
         <activity
             android:name=".aboutAppActivity.AboutAppActivity"
-            android:exported="true"
-            android:screenOrientation="fullSensor"/>
+            android:exported="true"/>
         <activity
             android:name=".movieslistActivity.MoviesListActivity"
             android:exported="true"
@@ -26,8 +25,8 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>
