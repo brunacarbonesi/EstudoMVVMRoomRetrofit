@@ -12,7 +12,7 @@ import com.brunacarbonesi.apps.estudomvvmroomretrofit.utils.ViewStatus
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class MoviesListViewModel(private val repository: Repository): ViewModel() {
+class MoviesListViewModel(private val repository: Repository) : ViewModel() {
 
     val _liveDataMovie = MutableLiveData<ViewData<List<MovieVO>>>()
     val liveDataMovie: LiveData<ViewData<List<MovieVO>>> get() = _liveDataMovie
@@ -43,7 +43,7 @@ class MoviesListViewModel(private val repository: Repository): ViewModel() {
                         status = ViewStatus.ERROR
                         _liveDataMovie.postValue(ViewData(viewStatus = ViewStatus.ERROR))
                     }
-                 )
+                )
         )
     }
 
