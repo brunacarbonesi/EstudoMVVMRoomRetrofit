@@ -3,14 +3,14 @@
 **Este projeto é para o estudo de aplicação construída com arquitetura MVVM e 
 seguindo as diretrizes de uma clean archtecture.**
 
-##Background
+## Background
 Lista de filmes consumidas da Api do Imdb, mostrando os filmes mais populares.
 São três telas:
 1. Lista de filmes
 2. Detalhes do filme selecionado 
 3. Sobre o App
 
-##O projeto
+## O projeto
 
 Na lista de filmes, há o tratamento para três status da lista.
 1. Success: lista preenchida com os filmes obtidos da api ou do cache (caso o device esteja sem 
@@ -51,16 +51,16 @@ utilizei o data binding.
 O **Data Binding** colabora com a diminuição de linhas de código e também no tratamento de "nulidade". 
 Ele o faz automaticamente.
 
-###Resumo do design pattern:
+### Resumo do design pattern:
 Model e Repositório: lógica de negócio e regras de como os dados podem ser manipulados
 ViewModel: expõe os dados necessários para a View
 View: somente observa as mudanças sinalizadas pelo ViewModel e reage
 
-##Melhorias a serem feitas:
+## Melhorias a serem feitas:
 Teste unitário: foi escrito um teste unitário simples. Pretendo elaborar testes para maior cobertura do código.
 Transição entre fragments: deixar as transições mais suaves.
 
-##A fazer
+## A fazer
 Salvar o estado da tela do recyclerView (SaveState)
 Uso da biblioteca Pagination3 do JetPack para consumir a Api como uma lista "infinita".
 Implementação de biblioteca para injeção de dependência (provavelmente Hilt ou Koin)
