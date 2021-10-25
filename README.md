@@ -19,6 +19,7 @@ Na lista de filmes, há o tratamento para três status da lista.
 3. **No value:** se a lista de filmes estiver vazia. Este caso ocorrerá com a falta de conexão 
 com rede de internet e se a lista não tiver sido preenchida previamente (quando o device estava 
    conectado à internet).
+4. **Loading:** Enquanto recebe os dados.
    
 
 Neste projeto, utilizei a arquitetura MVVM para separar as camadas de dados, de apresentação e 
