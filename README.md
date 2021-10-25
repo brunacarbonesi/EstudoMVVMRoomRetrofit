@@ -41,6 +41,7 @@ Para o armazenamento e consumo dos dados em base local (persistência dos dados)
 Sobre os dados, utilizei o **Single** para observar o dado ou o erro do resultado obtido através do repositório.
 O Single faz parte do RXJava e com isso pude aplicar o map para transformação dos dados obtidos no banco de dados e na Api.
 O compositeDisposable foi incluído para "agrupar" os disposables, que fazem a ligação entre o dado observado e o observador.
+
 Para gerenciar a navegação pelo aplicativo e suas transições, apliquei a biblioteca Navigation do jetpack. 
 
 Para referenciar os elementos das Views, utilizei o view binding e para preencher as dados nas views, utilizei o data binding.
