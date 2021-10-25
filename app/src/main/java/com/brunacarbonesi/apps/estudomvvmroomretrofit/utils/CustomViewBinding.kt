@@ -10,6 +10,7 @@ fun ImageView.bindImageUrl(url:String) {
     if (url.isNotBlank()) {
         Picasso.get()
             .load("https://image.tmdb.org/t/p/w342$url")
+            .placeholder(R.drawable.placeholder_movie)
             .error(R.drawable.placeholder_movie)
             .into(this)
 
