@@ -5,8 +5,6 @@ import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.R
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.databinding.ActivityAboutAppBinding
 

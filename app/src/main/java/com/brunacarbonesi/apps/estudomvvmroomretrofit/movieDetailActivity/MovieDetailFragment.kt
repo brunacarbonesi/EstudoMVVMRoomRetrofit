@@ -5,18 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import com.brunacarbonesi.apps.estudomvvmroomretrofit.R
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.databinding.FragmentMovieDetailBinding
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.service.model.MovieVO
 import com.brunacarbonesi.apps.estudomvvmroomretrofit.utils.Definitions
 import com.google.android.material.transition.MaterialContainerTransform
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-import java.util.*
 
 class MovieDetailFragment : Fragment() {
     private var _binding: FragmentMovieDetailBinding? = null
@@ -48,8 +42,6 @@ class MovieDetailFragment : Fragment() {
             requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         }
 
-        sharedElementEnterTransition = MaterialContainerTransform()
-
         return binding.root
     }
 
@@ -60,6 +52,7 @@ class MovieDetailFragment : Fragment() {
         binding.movie = movieVO
 
         setupView()
+        sharedElementEnterTransition = MaterialContainerTransform()
     }
 
     private fun setupView() {
@@ -67,7 +60,7 @@ class MovieDetailFragment : Fragment() {
         binding.rating.rating = movieVO.rating / 2
 
         val releaseDateFormatted = Definitions.formatReleaseDate(resources, movieVO.releaseDate)
-        if (!releaseDateFormatted.isEmpty()){
+        if (!releaseDateFormatted.isEmpty()) {
             binding.movieDetailReleaseDate.text = releaseDateFormatted
         } else {
             binding.movieDetailReleaseDate.visibility = View.GONE

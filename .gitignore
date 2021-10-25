@@ -72,3 +72,6 @@ hs_err_pid41216.log
 .gradle/7.0.2/executionHistory/executionHistory.bin
 .gradle/7.0.2/executionHistory/executionHistory.bin
 .gradle/7.0.2/executionHistory/executionHistory.lock
+.gradle/7.0.2/executionHistory/executionHistory.lock
+.gradle/7.0.2/executionHistory/executionHistory.lock
+.idea/libraries/Gradle__androidx_test_core_ktx_1_2_0_aar.xml
