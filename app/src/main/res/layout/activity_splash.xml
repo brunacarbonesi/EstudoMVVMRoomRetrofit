@@ -4,6 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".splashActivity.SplashActivity">
+    tools:context=".splashActivity.SplashActivity"
+    android:background="@color/colorBackground">
+
+    <ImageView
+        android:id="@+id/imageViewCineAppLogo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="359dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cine_app"
+        android:contentDescription="LogoCineApp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
